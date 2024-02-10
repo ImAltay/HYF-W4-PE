@@ -52,7 +52,8 @@ const getPeopleOfClass = (className) => {
 
   // WHAT IF 2 different classes was in same module. and had different teachers. this data sets assume there will  always be only one teacher teaching that module. also before running the code we would have to check the dataset for incorrectly filled values. what if user wrote "react" module for 2 different teacher? or what if there were 2 different classes on same module?
 };
-// You can uncomment out this line to try your function
+
+// Console logs for 3 different situations
 console.log("Class 33: ");
 console.log(getPeopleOfClass("class33")); // Non active class
 console.log("\n Class 35: ");
