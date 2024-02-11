@@ -13,7 +13,8 @@ import { modules, students, mentors, classes } from "./hyf.js";
  */
 const getPeopleOfClass = (className) => {
   // TODO complete this function
-  // we will use currentClass multiple time, so lets make avariable
+
+  // we will use currentClass multiple time, so lets make a variable
   const currentClass = classes.find((e) => e.name === className);
 
   // it says Currently participating = we don't need non active classes but lets not have an error. so not active = console log this
@@ -44,9 +45,11 @@ const getPeopleOfClass = (className) => {
 
     return [
       mentorCurrentClass,
-      ...students.map((e) => {
-        return { name: e.name, role: "Student" };
-      }),
+      ...students
+        .filter((e) => e.class === currentClass.name)
+        .map((e) => {
+          return { name: e.name, role: "Student" };
+        }),
     ];
   }
 
@@ -55,7 +58,10 @@ const getPeopleOfClass = (className) => {
 
 // Console logs for 3 different situations
 console.log("Class 33: ");
+
 console.log(getPeopleOfClass("class33")); // Non active class
+console.log("Class 34: ");
+console.log(getPeopleOfClass("class34"));
 console.log("\n Class 35: ");
 console.log(getPeopleOfClass("class35")); // active class without mentor
 console.log("\nClass 36:");
