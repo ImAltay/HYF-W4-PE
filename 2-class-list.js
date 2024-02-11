@@ -58,7 +58,6 @@ const getPeopleOfClass = (className) => {
 
 // Console logs for 3 different situations
 console.log("Class 33: ");
-
 console.log(getPeopleOfClass("class33")); // Non active class
 console.log("Class 34: ");
 console.log(getPeopleOfClass("class34"));
